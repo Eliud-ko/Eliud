@@ -156,25 +156,25 @@ const wita = moment.tz('Asia/Makassar').format('HH : mm : ss')
 
 const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
 if(time2 < "23:59:00"){
-var ucapanWaktu = 'Selamat Malam 🏙️'
+var ucapanWaktu = 'Xtime BASE BOT 🇰🇪'
 }
 if(time2 < "19:00:00"){
-var ucapanWaktu = 'Selamat Petang 🌆'
+var ucapanWaktu = 'WAHALA KING 🇰🇪'
 }
 if(time2 < "18:00:00"){
-var ucapanWaktu = 'Selamat Sore 🌇'
+var ucapanWaktu = 'WAHALA KING🇰🇪'
 }
 if(time2 < "15:00:00"){
-var ucapanWaktu = 'Selamat Siang 🌤️'
+var ucapanWaktu = 'VITAL 🇰🇪BRUICE 🌤️'
 }
 if(time2 < "10:00:00"){
-var ucapanWaktu = 'Selamat Pagi 🌄'
+var ucapanWaktu = 'KING TYSA🇰🇪'
 }
 if(time2 < "05:00:00"){
-var ucapanWaktu = 'Selamat Subuh 🌆'
+var ucapanWaktu = 'SILENCER 🇰🇪'
 }
 if(time2 < "03:00:00"){
-var ucapanWaktu = 'Selamat Tengah Malam 🌃'
+var ucapanWaktu = 'GOOD LOVER 🇰🇪'
 }
 
 //================== [ DATABASE ] ==================//
@@ -202,7 +202,7 @@ if (user) {
 } else global.db.data.chats[m.chat] = {
 autoai: false,
 isBannedChat: false,
-welcome: false,
+welcome: true,
 }
 // setting
 let setting = global.db.data.settings[botNumber]
@@ -381,7 +381,7 @@ const reply = async (teks) => {
 
     nowa1 = [`@${global.owner}`]
     if (budy.includes(nowa1) && !m.key.fromMe) {
-        reply('jangan tag owner kak, owner lagi sibuk..')
+        reply('........')
     }
 
     nowa = [`bot`]
@@ -413,7 +413,7 @@ const reply = async (teks) => {
 
     }
 
-//+++++++[ antilin ]++++++++++
+//+++++++[ antilink ]++++++++++
     const antitaggclist = JSON.parse(fs.readFileSync("./media/database/antitaggc.json"));
     const antiGroupTag = m.isGroup ? antitaggclist.includes(from) : false;
   const antilinkgcList = JSON.parse(fs.readFileSync("./media/database/antilinkgc.json"));
@@ -425,7 +425,7 @@ if (antiGroupTag) {
         if (m.key.fromMe) return;
         if (isCreator) return;
         
-    console.log("Tag Group Terdeteksi dari:", m.sender);
+    console.log("Group was tagged:", m.sender);
         await fuzzy.sendMessage(m.chat, {
           delete: {
             remoteJid: m.chat,
@@ -435,7 +435,7 @@ if (antiGroupTag) {
           }
         })
         fuzzy.sendMessage(from, {
-          text: `\`\`\`「 Status Tag Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a tag status and successfully deleted`,
+          text: `\`\`\`「⚠️ Status Tag Detected ⚠️」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a tag status and successfully deleted`,
           contextInfo: {
             mentionedJid: [m.sender]
           }
@@ -504,8 +504,8 @@ const pw = crypto.randomBytes(5).toString('hex')
     if (tebakgambar.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
       jawaban = tebakgambar[from]
-      if (budy.toLowerCase() == "nyerah") {
-        await reply('*Anda Telah menyerah*')
+      if (budy.toLowerCase() == "surrender") {
+        await reply('*you have given up*')
         delete tebakgambar[from]
       }
       else if (budy.toLowerCase() == jawaban) {
@@ -516,14 +516,14 @@ const pw = crypto.randomBytes(5).toString('hex')
     
         delete tebakgambar[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*Answer wrong!*')
     }
     if (kuismath.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
       jawaban = kuismath[from]
 
-      if (budy.toLowerCase() == "nyerah") {
-        await reply('*Anda Telah menyerah*')
+      if (budy.toLowerCase() == "surrender") {
+        await reply('*you have given up*')
         delete kuismath[from]
       }
       else if (budy.toLowerCase() == jawaban) {
@@ -534,13 +534,13 @@ const pw = crypto.randomBytes(5).toString('hex')
 
         delete kuismath[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false anwer!*')
     }
     if (tebakasahotak.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
       jawaban = tebakasahotak[from]
-      if (budy.toLowerCase() == "nyerah") {
-        await reply('*Anda Telah menyerah*')
+      if (budy.toLowerCase() == "surrender") {
+        await reply('*you have given up*')
         delete tebakasahotak[from]
       }
       else if (budy.toLowerCase() == jawaban) {
@@ -551,13 +551,13 @@ const pw = crypto.randomBytes(5).toString('hex')
 
         delete tebakasahotak[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebaksiapakahaku.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
       jawaban = tebaksiapakahaku[from]
-      if (budy.toLowerCase() == "nyerah") {
-        await reply('*Anda Telah menyerah*')
+      if (budy.toLowerCase() == "surrender") {
+        await reply('*you have given up*')
         delete tebaksiapakahaku[from]
       }
       else if (budy.toLowerCase() == jawaban) {
@@ -568,13 +568,13 @@ const pw = crypto.randomBytes(5).toString('hex')
 
         delete tebaksiapakahaku[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebaksusunkata.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
       jawaban = tebaksusunkata[from]
-      if (budy.toLowerCase() == "nyerah") {
-        await reply('*Anda Telah menyerah*')
+      if (budy.toLowerCase() == "surrender") {
+        await reply('*you have given up*')
         delete tebaksusunkata[from]
       }
       else if (budy.toLowerCase() == jawaban) {
@@ -585,13 +585,13 @@ const pw = crypto.randomBytes(5).toString('hex')
 
         delete tebaksusunkata[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebakbendera.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
       jawaban = tebakbendera[from]
-      if (budy.toLowerCase() == "nyerah") {
-        await reply('*Anda Telah menyerah*')
+      if (budy.toLowerCase() == "surrender") {
+        await reply('*you have given up*')
         delete tebakbendera[from]
       }
       else if (budy.toLowerCase() == jawaban) {
@@ -602,7 +602,7 @@ const pw = crypto.randomBytes(5).toString('hex')
 
         delete tebakbendera[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*flase answer*')
     }
 if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -619,7 +619,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebakbendera2[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebakkabupaten.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -636,7 +636,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebakkabupaten[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebakkimia.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -653,7 +653,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebakkimia[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebaktekateki.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -670,7 +670,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebaktekateki[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebaklagu.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -687,7 +687,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebaklagu[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebakkata.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -704,7 +704,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebakkata[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebakkalimat.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -721,7 +721,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebakkalimat[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebaklirik.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -738,7 +738,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebaklirik[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false answer!*')
     }
     if (tebaktebakan.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true
@@ -755,7 +755,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
 
         delete tebaktebakan[from]
       }
-      else m.reply('*Jawaban Salah!*')
+      else m.reply('*false anwer!*')
     }
     if (tebakjkt48.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted && m.quoted.sender === botNumber) {
       kuis = true;
@@ -772,7 +772,7 @@ if (tebakbendera2.hasOwnProperty(from) && !isCmd && !m.key.fromMe && m.quoted &&
         delete tebakjkt48[from];
       }
       else {
-        m.reply('*Jawaban Salah!*');
+        m.reply('*false answer!*');
       }
     }
         
@@ -781,10 +781,10 @@ switch(command) {
 case 'script':{
 reply(`
 ▧ 「 *LINK SCRIPT* 」
-│ https://youtube.com/@xziyy?si=ykmNPTiBGBrNzA-E
-│ script ini free dilarang menjual belikan.
-│ Credits: xZiyy
-│ madein: Indonesian
+│ ig.com/Lesta_elih
+│ Contact Eliud for more info of this bot
+│ Credits: Eliud
+│ madein: Kenya🇰🇪, Nairobi 
 ┗─────────────
 `)
 }
@@ -813,7 +813,7 @@ if (!isCreator) return m.reply(mess.owner)
         global.menuMode = 'nobutton';
         reply('✅ Mode menu diubah ke no button');
     } else {
-        reply('⚠️ Pilihan tidak valid! Gunakan: .settingmenu [nobutton/button]');
+        reply('⚠️ Enter a valid option! Gunakan: .settingmenu [nobutton/button]');
     }
 }
 break;
@@ -831,7 +831,7 @@ if (categories.length > 0) {
     categories.forEach((cat, index) => {
         menuCategories += `\n┏─『 \`${cat.category.toUpperCase()}\` 』\n`;
 
-        // Tampilkan perintah dalam kategori
+        // show commands in the category 
         if (Array.isArray(cat.items)) {
             cat.items.forEach(item => {
                 menuCategories += `│ ⿻ ${prefix}${item.cmd}\n`;
@@ -854,7 +854,7 @@ if (categories.length > 0) {
     
     if (global.menuMode === 'nobutton') {
         menu = `
-Hai haii ${ucapanWaktu} 👋
+Hi ${ucapanWaktu} 👋
 
 *[ I N F O - B O T ]*
 *Name*: ${global.botname}
@@ -968,7 +968,7 @@ ${menuCategories}
 ┗─────────────❐
 
 ┏─『 \`BERITA MENU\` 』
-│ ⿻ ${prefix}gempa
+│ ⿻ ${prefix} earthquake 
 │ ⿻ ${prefix}liputan6
 ┗─────────────❐
 
@@ -989,17 +989,17 @@ ${menuCategories}
 ┗─────────────❐
 
 ┏─『 \`GAME MENU\` 』
-│ ⿻ ${prefix}tebak kata
-│ ⿻ ${prefix}tebak tebakan
-│ ⿻ ${prefix}tebak bendera
-│ ⿻ ${prefix}tebak kalimat
-│ ⿻ ${prefix}tebak lirik
+│ ⿻ ${prefix}Guess word
+│ ⿻ ${prefix}Guess guess
+│ ⿻ ${prefix}Guess flag
+│ ⿻ ${prefix}Guess sentence 
+│ ⿻ ${prefix}Guess the lyrics 
 │ ⿻ ${prefix}tebak tekateki
-│ ⿻ ${prefix}tebak siapakahaku
+│ ⿻ ${prefix}Guess who I am
 │ ⿻ ${prefix}tebak asahotak
 │ ⿻ ${prefix}tebak susunkata
-│ ⿻ ${prefix}tebak kimia
-│ ⿻ ${prefix}tebak gambar
+│ ⿻ ${prefix}Guess Chemistry
+│ ⿻ ${prefix}Guess the image
 │ ⿻ ${prefix}tebak bendera2
 │ ⿻ ${prefix}tebak jkt48
 ┗─────────────❐
@@ -1034,11 +1034,11 @@ ${menuCategories}
 
 ┏─ *TQ TO:*
 │   - ${global.ownername} (owner)
-│   - xZiyy
-│   - yanzdev
-│   - Siputzx Api
-│   - Clairity Api
-│   - And All Creator
+│   - Xtime base 
+│   - Eliud-konkara
+│   - ig.com/Lesta_Eliud
+│   - ✅
+│   - 🥳
 ┗─────────────❐
 
 > type this to get the script:
